@@ -312,7 +312,7 @@ consolex.header(`8. Flatten. Напишите функцию, которая п�
         for (let i = 0; i < array.length; i++) {
             while (Array.isArray(array[i])) {
                 array = array.slice(0, i)
-                    .concat(array.slice(i, i + 1).reduce((acc, val) => acc.concat(val), []))
+                    .concat(array[i].reduce((acc, val) => acc.concat(val), []))
                     .concat(array.slice(i + 1));
             }
         }
